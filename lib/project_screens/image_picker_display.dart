@@ -39,58 +39,70 @@ class _ImagePickerDisplayState extends State<ImagePickerDisplay> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text('Camera')),
-        leading: Icon(Icons.keyboard_backspace_sharp),
-        elevation: 10,
-        shadowColor: Colors.black,
-        backgroundColor: Colors.blueAccent,
-      ),
-      backgroundColor: Colors.lightBlue[400],
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  constraints: BoxConstraints(
-                    minHeight: 100.0,
-                    minWidth: 100.0,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Center(child: Text('Camera')),
+          leading: Icon(Icons.keyboard_backspace_sharp),
+          elevation: 10,
+          shadowColor: Colors.black,
+          backgroundColor: Colors.blueAccent,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.deepPurple.shade700, Colors.purple.shade500, Colors.pink.shade300],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+          ),
+        ),
+        backgroundColor: Colors.lightBlue[400],
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    constraints: BoxConstraints(
+                      minHeight: 100.0,
+                      minWidth: 100.0,
+                    ),
+                    child: _image!=null
+                        ? Image.file(_image!)
+                        : Icon(Icons.image, size: 200.0)
                   ),
-                  child: _image!=null
-                      ? Image.file(_image!)
-                      : Icon(Icons.image, size: 200.0)
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        chooseImageFromGallery();
-                      },
-                      child: Text('Choose'),
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        captureImageFromCamera();
-                      },
-                      child: Text('Capture'),
-                    ),
-                  ],
-                ),
-                ElevatedButton(
-                  onPressed: () {
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          chooseImageFromGallery();
+                        },
+                        child: Text('Choose'),
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          captureImageFromCamera();
+                        },
+                        child: Text('Capture'),
+                      ),
+                    ],
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
 
-                  },
-                  child: Text('Next'),
-                ),
-              ],
+                    },
+                    child: Text('Next'),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

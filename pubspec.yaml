@@ -19,6 +19,7 @@ dependencies:
   camera: ^0.11.0+2
   rflutter_alert: ^2.0.7
   webview_flutter: ^4.9.0
+  google_ml_kit: ^0.18.0
 
 #  using serializable to have more features
 #  json_annotation: ^4.9.0
@@ -43,8 +44,9 @@ flutter:
 
   assets:
      - assets/images/anabella.jpg
-     - assets/images/frame3.png
-     - assets/images/img2.jpg
+     - assets/images/imageLabelFrame.png
+     - assets/images/videoLabelFrame.jpg
+     - assets/images/imageLabelBackground.jpg
 
 
 

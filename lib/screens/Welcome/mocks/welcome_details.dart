@@ -1,8 +1,7 @@
-
 // ignore_for_file: prefer_const_constructors
 
-import 'package:camera/camera.dart';
 import 'package:kawaii_vision/project_screens/Quizzler/quizzler.dart';
+import 'package:kawaii_vision/project_screens/image_labeling.dart';
 import 'package:kawaii_vision/project_screens/image_picker_display.dart';
 import 'package:kawaii_vision/project_screens/live_camera_feed.dart';
 
@@ -66,7 +65,7 @@ class WelcomeDetails extends Location {
         urlDocs: 'https://en.wikipedia.org/wiki/Quiz',
         Myname: 'By Manoj Jivanagi',
         Mydesc: '15th Sept 24',
-        projectPath: Quizzler(),
+        projectPath: ImageLabeling(),
         facts: <LocationFact>[
           LocationFact(
               title: 'Summary',

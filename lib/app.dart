@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:kawaii_vision/project_screens/Quizzler/quizzler.dart';
+import 'package:kawaii_vision/project_screens/image_labeling.dart';
 import 'package:kawaii_vision/project_screens/image_picker_display.dart';
 import 'package:kawaii_vision/project_screens/live_camera_feed.dart';
 import 'package:kawaii_vision/screens/Welcome/mocks/welcome_details.dart';
@@ -46,6 +47,7 @@ class _MyAppState extends State<MyApp> {
         ImagePickerDisplay.id: (context) => ImagePickerDisplay(),
         LiveCameraFeed.id: (context) => LiveCameraFeed(),
         Quizzler.id: (context) => Quizzler(),
+        ImageLabeling.id: (context) => ImageLabeling(),
       },
     );
   }

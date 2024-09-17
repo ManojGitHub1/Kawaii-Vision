@@ -38,9 +38,16 @@ class _WsState extends State<Ws> {
       theme: _isDarkTheme ? ThemeData.dark().copyWith(scaffoldBackgroundColor: null) : ThemeData.light().copyWith(scaffoldBackgroundColor: null),
       home: Scaffold(
           appBar: AppBar(
-            // leading: Icon(Icons.arrow_back_ios_new_sharp),
+            title: Center(
+              child: Text(
+                location.name.toUpperCase(),
+                  style: _isDarkTheme
+                      ? Styles.locationTileTitleDark.copyWith(fontWeight: FontWeight.bold)
+                      : Styles.locationTileTitleLight.copyWith(fontWeight: FontWeight.bold)
+              ),
+            ),
             leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new_sharp),
+              icon: Icon(Icons.arrow_back_ios_new_sharp, color: Colors.black,),
               onPressed: () {
                 Navigator.pop(context); // This will take the user back to the previous screen
               },
@@ -54,9 +61,10 @@ class _WsState extends State<Ws> {
             flexibleSpace: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.lightBlueAccent, Colors.blue, Colors.lightBlueAccent],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                  colors: [Colors.white, Color(0x00000000)],
+                  // colors: [Colors.lightBlueAccent, Colors.blue, Colors.lightBlueAccent],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
                 ),
               ),
             ),
@@ -189,7 +197,6 @@ class _WsState extends State<Ws> {
       ),
     );
   }
-
 
   Widget _sectionTitle(String text) {
     return Container(
